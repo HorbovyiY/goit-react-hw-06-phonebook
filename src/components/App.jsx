@@ -7,7 +7,6 @@ import { Title } from "./App.styled";
 
 export const App = () => {
   const [contacts, setContacts] = useState([]);
-  // const [filter, setFilter] = useState('');
 
   useEffect(() => { 
     const contactsBook = JSON.parse(localStorage.getItem("contacts"));
@@ -17,27 +16,6 @@ export const App = () => {
   useEffect(() => { 
     localStorage.setItem("contacts", JSON.stringify(contacts))
   },[contacts])
-
-  // const addContact = (name, number) => { 
-  //   const contact = {
-  //     id: nanoid(),
-  //     name: name,
-  //     number: number,
-  //   }
-    // const isNameInContacts = contacts.filter(item => item.name === name).length;
-
-    //   (isNameInContacts) ?
-    //   alert("This name is already in contacts"):
-    //   setContacts(prevState => [contact, ...prevState] )
-  // }
-
-  const deleteContact = (id) => { 
-    setContacts(prevState => prevState.filter(item => item.id !== id) )
-  }
-
-  // const toFilter = (text) => { 
-  //   setFilter(text)
-  // }
 
 return(
     <div
@@ -55,7 +33,7 @@ return(
 
       <Title>Contacts</Title>
         <Filter/>
-        <Contacts contacts={contacts} del={deleteContact} />
+        <Contacts/>
     </div>
   );
 };
