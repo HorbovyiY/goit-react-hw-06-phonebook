@@ -1,5 +1,4 @@
 import {useState, useEffect} from "react";
-import { nanoid } from "nanoid";
 
 import { Form } from "./Form/Form";
 import { Contacts } from "./Contacts/Contacts";
@@ -19,18 +18,18 @@ export const App = () => {
     localStorage.setItem("contacts", JSON.stringify(contacts))
   },[contacts])
 
-  const addContact = (name, number) => { 
-    const contact = {
-      id: nanoid(),
-      name: name,
-      number: number,
-    }
-    const isNameInContacts = contacts.filter(item => item.name === name).length;
+  // const addContact = (name, number) => { 
+  //   const contact = {
+  //     id: nanoid(),
+  //     name: name,
+  //     number: number,
+  //   }
+    // const isNameInContacts = contacts.filter(item => item.name === name).length;
 
-      (isNameInContacts) ?
-      alert("This name is already in contacts"):
-      setContacts(prevState => [contact, ...prevState] )
-  }
+    //   (isNameInContacts) ?
+    //   alert("This name is already in contacts"):
+    //   setContacts(prevState => [contact, ...prevState] )
+  // }
 
   const deleteContact = (id) => { 
     setContacts(prevState => prevState.filter(item => item.id !== id) )
@@ -52,7 +51,7 @@ return(
       }}
     >
       <Title>Phonebook</Title>  
-        <Form add={addContact} />
+        <Form/>
 
       <Title>Contacts</Title>
         <Filter text={filter} toFilter={toFilter} />
