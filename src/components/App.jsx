@@ -7,7 +7,7 @@ import { Title } from "./App.styled";
 
 export const App = () => {
   const [contacts, setContacts] = useState([]);
-  const [filter, setFilter] = useState('');
+  // const [filter, setFilter] = useState('');
 
   useEffect(() => { 
     const contactsBook = JSON.parse(localStorage.getItem("contacts"));
@@ -35,9 +35,9 @@ export const App = () => {
     setContacts(prevState => prevState.filter(item => item.id !== id) )
   }
 
-  const toFilter = (text) => { 
-    setFilter(text)
-  }
+  // const toFilter = (text) => { 
+  //   setFilter(text)
+  // }
 
 return(
     <div
@@ -54,8 +54,8 @@ return(
         <Form/>
 
       <Title>Contacts</Title>
-        <Filter text={filter} toFilter={toFilter} />
-        <Contacts contacts={contacts} filter={filter} del={deleteContact} />
+        <Filter/>
+        <Contacts contacts={contacts} del={deleteContact} />
     </div>
   );
 };

@@ -4,7 +4,7 @@ export const contactsSlice = createSlice({
     name: 'contacts',
     initialState: {
         contacts: [],
-        filter: '1'
+        filter: ''
     },
 
     reducers: {

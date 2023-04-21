@@ -29,7 +29,6 @@ export const Form = () => {
             name: e.currentTarget.elements.name.value,
             number: e.currentTarget.elements.number.value
         }
-
         const isNameInContacts = contacts.filter(item => item.name === e.currentTarget.elements.name.value).length;
 
         (isNameInContacts) ?
